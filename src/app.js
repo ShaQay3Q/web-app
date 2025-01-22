@@ -21,6 +21,10 @@ app.get("/contact", (req, res) => {
 	res.send("Contact Page");
 });
 
+app.get("/weather", (req, res) => {
+	res.send("Show Weather Page");
+});
+
 //! start the server
 app.listen(3000, () => {
 	console.log("Server is up on port 3000");
