@@ -1,6 +1,18 @@
+// node core module
+const path = require("node:path");
+
+// npm mudule
 const express = require("express"); // is actually a function as oppose to something like an dobject
+
+// console.log(__dirname); // /~/NodeJS/node-cours/web-server/src
+// console.log(__filename); // /~/NodeJS/node-cours/web-server/src/app.js
+
 // store express app
 const app = express(); // doesn't take any arguments => can configure the server with various methods on app
+const publicDirPath = path.join(__dirname, "../public");
+
+//! configure express to serve a specific directory
+app.use(express.static(publicDirPath)); // a way of costumizing the server
 
 app.get("/", (req, res) => {
 	res.send("<h1>Hello Express!</h1>");
