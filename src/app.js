@@ -3,12 +3,12 @@ const express = require("express"); // is actually a function as oppose to somet
 const app = express(); // doesn't take any arguments => can configure the server with various methods on app
 
 app.get("/", (req, res) => {
-	res.send("Hello Express!");
+	res.send("<h1>Hello Express!</h1>");
 });
 // app.com
 
 app.get("/about", (req, res) => {
-	res.send("About Page");
+	res.send("<h1>About<h1></br>");
 });
 // app.com/about
 
@@ -22,7 +22,10 @@ app.get("/contact", (req, res) => {
 });
 
 app.get("/weather", (req, res) => {
-	res.send("Show Weather Page");
+	res.send({
+		forcast: "It is cold!",
+		location: "Leipzig",
+	});
 });
 
 //! start the server
