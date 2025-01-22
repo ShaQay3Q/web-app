@@ -14,13 +14,14 @@ const publicDirPath = path.join(__dirname, "../public");
 //! configure express to serve a specific directory
 app.use(express.static(publicDirPath)); // a way of costumizing the server
 
-app.get("/", (req, res) => {
-	res.send("<h1>Hello Express!</h1>");
-});
+//! remove - express loads the index.html as main entry point
+// app.get("/", (req, res) => {
+// 	res.send("<h1>Hello Express!</h1>");
+// });
 // app.com
 
 app.get("/about", (req, res) => {
-	res.send("<h1>About<h1></br>");
+	res.send("<h1>About<h1>");
 });
 // app.com/about
 
