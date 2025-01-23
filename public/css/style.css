@@ -1,0 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: burlywood;
+	width: 100%;
+}
+
+h1 {
+	color: crimson;
+}
+
+h2 {
+	color: tomato;
+}
+
+img {
+	width: 300px;
+	height: 300px;
+}
