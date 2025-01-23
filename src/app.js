@@ -3,7 +3,7 @@ const path = require("node:path");
 
 // npm mudule
 const express = require("express"); // is actually a function as oppose to something like an dobject
-
+const hbs = require("hbs");
 // console.log(__dirname); // /~/NodeJS/node-cours/web-server/src
 // console.log(__filename); // /~/NodeJS/node-cours/web-server/src/app.js
 
@@ -12,12 +12,14 @@ const app = express(); // doesn't take any arguments => can configure the server
 
 // Define path for Express config
 const publicDirPath = path.join(__dirname, "../public");
-const viewsPath = path.join(__dirname, "../templates");
+const viewsPath = path.join(__dirname, "../templates/views"); // for pages
+const partialsPath = path.join(__dirname, "../templates/partials");
 
 // Setup handlebars engine and views location
 //! which templting engine to use => set handlebars =
 app.set("view engine", "hbs"); // key, value
 app.set("views", viewsPath); // when views have another name, then we pass dir path as views value => view -> templates
+hbs.registerPartials(partialsPath);
 
 // Setup static directory to serve
 //! configure express to serve a specific directory
