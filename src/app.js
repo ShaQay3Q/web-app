@@ -11,13 +11,23 @@ const express = require("express"); // is actually a function as oppose to somet
 const app = express(); // doesn't take any arguments => can configure the server with various methods on app
 const publicDirPath = path.join(__dirname, "../public");
 
+//! which templting engine to use => set handlebars =
+app.set("view engine", "hbs"); // key, value
+
 //! configure express to serve a specific directory
 app.use(express.static(publicDirPath)); // a way of costumizing the server
 
 //! remove - express loads the index.html as main entry point
-// app.get("/", (req, res) => {
-// 	res.send("<h1>Hello Express!</h1>");
-// });
+app.get("", (req, res) => {
+	res.render(
+		"index", // index is matching up with the templete name in the views
+		{
+			// this, the second srgumrnt is an object passed to the homepage here, with dynamic data
+			title: "Weather App",
+			weather: "It is raining.",
+		}
+	);
+});
 // app.com
 
 app.get("/about", (req, res) => {
