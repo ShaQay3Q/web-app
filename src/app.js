@@ -4,6 +4,7 @@ const path = require("node:path");
 // npm mudule
 const express = require("express"); // is actually a function as oppose to something like an dobject
 const { title } = require("node:process");
+const { text } = require("stream/consumers");
 
 // console.log(__dirname); // /~/NodeJS/node-cours/web-server/src
 // console.log(__filename); // /~/NodeJS/node-cours/web-server/src/app.js
@@ -40,7 +41,10 @@ app.get("/about", (req, res) => {
 // app.com/about
 
 app.get("/help", (req, res) => {
-	res.send("Help Page");
+	res.render("help", {
+		title: "Help!",
+		text: "Help! Help! Help!",
+	});
 });
 // app.com/help
 
