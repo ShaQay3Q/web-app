@@ -33,6 +33,12 @@ app.get("", (req, res) => {
 			// this, the second srgumrnt is an object passed to the homepage here, with dynamic data
 			title: "Weather App",
 			weather: "It is raining.",
+			name: "Shaghayegh",
+			links: [
+				{ name: "Home", url: "/", active: true },
+				{ name: "About", url: "/about", active: false },
+				{ name: "Help", url: "/help", active: false },
+			],
 		}
 	);
 });
@@ -40,8 +46,14 @@ app.get("", (req, res) => {
 
 app.get("/about", (req, res) => {
 	res.render("about", {
-		title: "About",
+		title: "About Page",
 		who: "Vivi",
+		name: "Shaghayegh",
+		links: [
+			{ name: "Home", url: "/", active: true },
+			{ name: "About", url: "/about", active: false },
+			{ name: "Help", url: "/help", active: false },
+		],
 	});
 });
 // app.com/about
@@ -50,6 +62,12 @@ app.get("/help", (req, res) => {
 	res.render("help", {
 		title: "Help!",
 		text: "Help! Help! Help!",
+		name: "Shaghayegh",
+		links: [
+			{ name: "Home", url: "/", active: true },
+			{ name: "About", url: "/about", active: false },
+			{ name: "Help", url: "/help", active: false },
+		],
 	});
 });
 // app.com/help
