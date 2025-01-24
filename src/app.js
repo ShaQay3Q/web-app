@@ -4,6 +4,7 @@ const path = require("node:path");
 // npm mudule
 const express = require("express"); // is actually a function as oppose to something like an dobject
 const hbs = require("hbs");
+const { title } = require("node:process");
 // console.log(__dirname); // /~/NodeJS/node-cours/web-server/src
 // console.log(__filename); // /~/NodeJS/node-cours/web-server/src/app.js
 
@@ -72,6 +73,17 @@ app.get("/help", (req, res) => {
 });
 // app.com/help
 
+app.get("/help/me", (req, res) => {
+	res.send("help me!");
+});
+
+app.get("/help/*", (req, res) => {
+	res.render("main404", {
+		title: "404!",
+		textMessage: "Sub page of Help, not found!",
+	});
+});
+
 app.get("/contact", (req, res) => {
 	res.send("Contact Page");
 });
@@ -80,6 +92,15 @@ app.get("/weather", (req, res) => {
 	res.send({
 		forcast: "It is cold!",
 		location: "Leipzig",
+	});
+});
+
+// for handling 404 errors
+app.get("*", (req, res) => {
+	res.render("main404", {
+		title: "404!",
+		textMessage: "Page not found!",
+		name: "Shaghayegh",
 	});
 });
 
