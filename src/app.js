@@ -80,7 +80,7 @@ app.get("/help/me", (req, res) => {
 app.get("/help/*", (req, res) => {
 	res.render("main404", {
 		title: "404!",
-		textMessage: "Sub page of Help, not found!",
+		textMessage: "Help article not found!",
 	});
 });
 
