@@ -78,9 +78,10 @@ app.get("/help/me", (req, res) => {
 });
 
 app.get("/help/*", (req, res) => {
-	res.render("main404", {
+	res.render("404", {
 		title: "404!",
 		textMessage: "Help article not found!",
+		name: "Shaghayegh",
 	});
 });
 
@@ -97,7 +98,7 @@ app.get("/weather", (req, res) => {
 
 // for handling 404 errors
 app.get("*", (req, res) => {
-	res.render("main404", {
+	res.render("404", {
 		title: "404!",
 		textMessage: "Page not found!",
 		name: "Shaghayegh",
