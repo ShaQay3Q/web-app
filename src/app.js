@@ -103,7 +103,9 @@ app.get("/weather", (req, res) => {
 		});
 	}
 	res.send({
-		location: address,
+		forcast: "It is cold!",
+		location: "Leipzig",
+		address,
 	});
 });
 
