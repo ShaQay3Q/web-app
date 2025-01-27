@@ -8,8 +8,16 @@ body {
 	padding: 0 16px;
 	/* background: burlywood; */
 	width: 650px;
+	/* width: 100vw; */
 	color: #333333;
 	font-family: "Courier New", Courier, monospace, Arial, Helvetica, sans-serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.main-content {
+	flex-grow: 1;
 }
 
 footer {
@@ -43,7 +51,7 @@ h2 {
 	color: green;
 } */
 
-img {
+.portrate-img {
 	width: 250px;
 	height: 250px;
 }

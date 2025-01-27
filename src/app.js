@@ -5,6 +5,7 @@ const path = require("node:path");
 const express = require("express"); // is actually a function as oppose to something like an dobject
 const hbs = require("hbs");
 const { title } = require("node:process");
+const { text } = require("stream/consumers");
 // console.log(__dirname); // /~/NodeJS/node-cours/web-server/src
 // console.log(__filename); // /~/NodeJS/node-cours/web-server/src/app.js
 
@@ -74,7 +75,12 @@ app.get("/help", (req, res) => {
 // app.com/help
 
 app.get("/help/me", (req, res) => {
-	res.send("help me!");
+	res.render("me", {
+		title: "Me!",
+		text: "This is about me!",
+		name: "Shaghayegh",
+	});
+	// res.send("help me!");
 });
 
 app.get("/help/*", (req, res) => {

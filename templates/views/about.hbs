@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>{{title}}</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    {{>header}}
-    <h2>{{who}}</h2>
-    <img src="./img/photo_2025-01-23_11-44-58.jpg" alt="Black and White can sleeping with a toy carrot.">
+        
+    <div class="main-content">
+        {{>header}}
+        <h2>{{who}}</h2>
+        <img class="portrate-img" src="./img/photo_2025-01-23_11-44-58.jpg" alt="Black and White can sleeping with a toy carrot.">
+    </div>
     {{>footer}}
 </body>
 
