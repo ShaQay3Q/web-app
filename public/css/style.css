@@ -4,23 +4,46 @@
 }
 
 body {
-	background: burlywood;
-	width: 100%;
+	margin: 0px auto;
+	padding: 0 16px;
+	/* background: burlywood; */
+	width: 650px;
+	color: #333333;
+	font-family: "Courier New", Courier, monospace, Arial, Helvetica, sans-serif;
 }
 
+footer {
+	color: #888888;
+	border-top: 1px solid #eee2e2;
+	padding: 16px 0;
+	margin-top: 16px;
+}
+
+header {
+	margin-top: 16px;
+	margin-bottom: 48px;
+}
 h1 {
+	font-size: 64px;
+	margin-bottom: 16px;
 	color: crimson;
+}
+
+header a {
+	color: #888888;
+	margin-right: 16px;
+	text-decoration: none;
 }
 
 h2 {
 	color: tomato;
 }
 
-h3 {
+/* h3 {
 	color: green;
-}
+} */
 
 img {
-	width: 300px;
-	height: 300px;
+	width: 250px;
+	height: 250px;
 }
