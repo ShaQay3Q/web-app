@@ -1,11 +1,11 @@
 // node core module
 const path = require("node:path");
+const geocode = require("./utils/geocode");
+const forcast = require("./utils/forcast");
 
 // npm mudule
 const express = require("express"); // is actually a function as oppose to something like an dobject
 const hbs = require("hbs");
-const { title } = require("node:process");
-const { text } = require("stream/consumers");
 // console.log(__dirname); // /~/NodeJS/node-cours/web-server/src
 // console.log(__filename); // /~/NodeJS/node-cours/web-server/src/app.js
 
@@ -97,15 +97,29 @@ app.get("/contact", (req, res) => {
 
 app.get("/weather", (req, res) => {
 	const address = req.query.city;
+
 	if (!address) {
 		return res.send({
 			error: "You must provide a city name",
 		});
 	}
-	res.send({
-		forcast: "It is cold!",
-		location: "Leipzig",
-		address,
+
+	geocode(address, (error, { latitute, longitute, location } = data) => {
+		if (error) {
+			return {
+				error,
+			};
+		}
+		forcast(latitute, longitute, (error, forcastData) => {
+			if (error) {
+				return { error };
+			}
+			res.send({
+				forcast: forcastData,
+				location,
+				address,
+			});
+		});
 	});
 });
 
