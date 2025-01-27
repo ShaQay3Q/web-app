@@ -96,9 +96,26 @@ app.get("/contact", (req, res) => {
 });
 
 app.get("/weather", (req, res) => {
+	const address = req.query.city;
+	if (!address) {
+		return res.send({
+			error: "You must provide a city name",
+		});
+	}
 	res.send({
-		forcast: "It is cold!",
-		location: "Leipzig",
+		location: address,
+	});
+});
+
+app.get("/products", (req, res) => {
+	const search = req.query.search;
+	if (!search) {
+		return res.send({
+			error: "You must provide a search term",
+		});
+	}
+	res.send({
+		products: [],
 	});
 });
 
