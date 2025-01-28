@@ -104,8 +104,8 @@ app.get("/weather", (req, res) => {
 		});
 	}
 
-	geocode(address, (error, data) => {
-		debugger;
+	// {} act as default value when data doesnt contain latitute, langitute and location
+	geocode(address, (error, { latitute, longitute, location } = {}) => {
 		if (error) {
 			return res.send({
 				error,
@@ -113,9 +113,8 @@ app.get("/weather", (req, res) => {
 		}
 
 		// destructure the data when it exists
-		const { latitute, longitute, location } = data;
+		// const { latitute, longitute, location } = data;
 
-		debugger;
 		forcast(latitute, longitute, (error, forcastData) => {
 			if (error) {
 				return res.send({ error });
