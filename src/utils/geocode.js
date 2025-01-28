@@ -12,7 +12,7 @@ const API_KEY = process.env.API_KEY;
 
 const geocode = (city, callback) => {
 	const geocodeURL = "https://geocode.maps.co/search?";
-
+	debugger;
 	axios
 		.get(geocodeURL, {
 			params: {
@@ -24,7 +24,7 @@ const geocode = (city, callback) => {
 			},
 		})
 		.then(function ({ data } = response) {
-			if (!data.length || !data[0] || typeof data[0] !== "object") {
+			if (!data || !data.length || !data[0] || typeof data[0] !== "object") {
 				throw new Error("Invalid response structure from the API!");
 			}
 

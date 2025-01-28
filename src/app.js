@@ -97,22 +97,28 @@ app.get("/contact", (req, res) => {
 
 app.get("/weather", (req, res) => {
 	const address = req.query.city;
-
+	debugger;
 	if (!address) {
 		return res.send({
 			error: "You must provide a city name",
 		});
 	}
 
-	geocode(address, (error, { latitute, longitute, location } = data) => {
+	geocode(address, (error, data) => {
+		debugger;
 		if (error) {
-			return {
+			return res.send({
 				error,
-			};
+			});
 		}
+
+		// destructure the data when it exists
+		const { latitute, longitute, location } = data;
+
+		debugger;
 		forcast(latitute, longitute, (error, forcastData) => {
 			if (error) {
-				return { error };
+				return res.send({ error });
 			}
 			res.send({
 				forcast: forcastData,
