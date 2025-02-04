@@ -1,5 +1,5 @@
 {{! suppose to replace the homepage  a hablebar templete }}
-
+<!DOCTYPE html>
 <html lang="en">
 
 	<head>
@@ -16,8 +16,16 @@
 		<div class="main-content">
 			{{>header}}
 			<h2>{{weather}}</h2>
+			<form action="" method="get">
+				<label for="city">
+					City:
+				</label>
+				<input type="text" name="city" id="city" placeholder="Entre a city name">
+				<button name="search" id="searchBtn">Search</button>
+			</form>
 		</div>
 		{{>footer}}
 	</body>
+		{{!-- <script src="/js/app.js"></script> --}}
 
 </html>
