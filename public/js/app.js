@@ -3,7 +3,7 @@ console.log("this is coming from app.js file!");
 const weatherForm = document.querySelector("form");
 const cityName = weatherForm.querySelector("#city");
 const displayMessage = document.querySelector(".display");
-const displayForcast = document.querySelector(".how-forcast");
+const displayForcast = document.querySelector(".show-forcast");
 
 weatherForm.reset();
 
@@ -24,10 +24,12 @@ weatherForm.addEventListener("submit", (event) => {
 				throw new Error(data.error);
 			}
 
+			const forcast = data.forcast?.toString();
+
 			console.log("location: " + data.location);
 			console.log("forcast: " + data.forcast);
 			displayMessage.textContent = String(data.location);
-			displayForcast.textContent = String(data.forcast);
+			displayForcast.textContent = forcast;
 			weatherForm.reset();
 		})
 		.catch((error) => {
