@@ -5,6 +5,8 @@ const cityName = weatherForm.querySelector("#city");
 const displayMessage = document.querySelector(".display");
 const displayForcast = document.querySelector(".how-forcast");
 
+weatherForm.reset();
+
 weatherForm.addEventListener("submit", (event) => {
 	// prevent the eventListinner to rerender*refresh) the page
 	event.preventDefault(); // Prevent form from reloading the page
@@ -24,6 +26,12 @@ weatherForm.addEventListener("submit", (event) => {
 
 			console.log("location: " + data.location);
 			console.log("forcast: " + data.forcast);
+			displayMessage.textContent = String(data.location);
+			displayForcast.textContent = String(data.forcast);
+			weatherForm.reset();
 		})
-		.catch((error) => console.log(error.message));
+		.catch((error) => {
+			console.log(error.message);
+			displayMessage.textContent = String(error.message);
+		});
 });
