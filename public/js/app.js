@@ -5,14 +5,15 @@ const cityName = weatherForm.querySelector("#city");
 const displayMessage = document.querySelector(".display");
 const displayForcast = document.querySelector(".show-forcast");
 
+// Construct the base URL dynamically
+const baseURL = `${window.location.protocol}//${window.location.host}`;
+
 weatherForm.reset();
 
 weatherForm.addEventListener("submit", (event) => {
 	// prevent the eventListinner to rerender*refresh) the page
 	event.preventDefault(); // Prevent form from reloading the page
-	fetch(
-		"http://localhost:3000/weather?city=" + encodeURIComponent(cityName.value)
-	)
+	fetch(baseURL + "/weather?city=" + encodeURIComponent(cityName.value))
 		.then((response) => {
 			if (!response.ok) {
 				throw new Error("HTTP error! Status: " + response.status);
