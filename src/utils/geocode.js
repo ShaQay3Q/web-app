@@ -11,8 +11,9 @@ const API_KEY = process.env.API_KEY;
 // };
 
 const geocode = (city, callback) => {
+	console.log(city);
+
 	const geocodeURL = "https://geocode.maps.co/search?";
-	debugger;
 	axios
 		.get(geocodeURL, {
 			params: {
