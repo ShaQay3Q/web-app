@@ -8,6 +8,10 @@ const displayForcast = document.querySelector(".show-forcast");
 // Construct the base URL dynamically
 const baseURL = `${window.location.protocol}//${window.location.host}`;
 
+console.log(baseURL);
+console.log(cityName.value);
+
+
 weatherForm.reset();
 
 weatherForm.addEventListener("submit", (event) => {
