@@ -9,12 +9,11 @@ const displayForcast = document.querySelector(".show-forcast");
 const baseURL = `${window.location.protocol}//${window.location.host}`;
 
 console.log(baseURL);
-console.log(cityName.value);
-
 
 weatherForm.reset();
 
 weatherForm.addEventListener("submit", (event) => {
+	console.log(cityName.value);
 	// prevent the eventListinner to rerender*refresh) the page
 	event.preventDefault(); // Prevent form from reloading the page
 	fetch(baseURL + "/weather?city=" + encodeURIComponent(cityName.value))
