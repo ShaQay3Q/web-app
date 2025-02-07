@@ -6,7 +6,7 @@ const displayMessage = document.querySelector(".display");
 const displayForcast = document.querySelector(".show-forcast");
 
 // Construct the base URL dynamically
-// const baseURL = `${window.location.protocol}//${window.location.host}`;
+const baseURL = `${window.location.protocol}//${window.location.host}`;
 
 console.log(baseURL);
 

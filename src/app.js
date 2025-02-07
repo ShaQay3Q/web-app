@@ -151,7 +151,7 @@ app.get("*", (req, res) => {
 
 //! start the server
 //listen to specific port
-const port = process.env.PORT;
+const port = process.env.PORT || 3001;
 app.listen(port, () => {
 	console.log(`Server is up on port ${port}`);
 });
