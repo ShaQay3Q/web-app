@@ -6,7 +6,7 @@ const displayMessage = document.querySelector(".display");
 const displayForcast = document.querySelector(".show-forcast");
 
 // Construct the base URL dynamically
-const baseURL = `${window.location.protocol}//${window.location.host}`;
+// const baseURL = `${window.location.protocol}//${window.location.host}`;
 
 console.log(baseURL);
 
@@ -17,7 +17,7 @@ weatherForm.addEventListener("submit", (event) => {
 	event.preventDefault(); // Prevent form from reloading the page
 	console.log(cityName.value);
 
-	fetch(baseURL + "/weather?city=" + encodeURIComponent(cityName.value))
+	fetch("/weather?city=" + encodeURIComponent(cityName.value))
 		.then((response) => {
 			if (!response.ok) {
 				throw new Error("HTTP error! Status: " + response.status);
