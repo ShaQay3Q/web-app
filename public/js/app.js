@@ -16,6 +16,8 @@ weatherForm.addEventListener("submit", (event) => {
 	// prevent the eventListinner to rerender*refresh) the page
 	event.preventDefault(); // Prevent form from reloading the page
 	console.log(cityName.value);
+	displayForcast.textContent = "";
+	displayMessage.textContent = "";
 
 	fetch("/weather?city=" + encodeURIComponent(cityName.value))
 		.then((response) => {
