@@ -34,7 +34,6 @@ app.get("", (req, res) => {
 		{
 			// this, the second srgumrnt is an object passed to the homepage here, with dynamic data
 			title: "Weather App",
-			weather: "It is raining.",
 			name: "Shaghayegh",
 			links: [
 				{ name: "Home", url: "/", active: true },
