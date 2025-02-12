@@ -25,14 +25,15 @@ const forcast = (latitute, longitute, callback) => {
 			// extract properties (current and location) from the response.data object.
 			// and assigne them to "data" and "location"
 			const { current, location } = data;
-			const { temp_c, feelslike_c, condition } = current;
+			const { temp_c, feelslike_c, condition, cloud } = current;
 			const { name, region, country } = location;
 			const locationDetails = `${name} (${region}, ${country})`;
 
 			callback(
 				undefined,
-				`It is currently ${temp_c} degrees out there in ${locationDetails}, and it feels like ${feelslike_c} degrees out.
-Condition: ${condition.text}`
+				`It is currently ${temp_c} degrees out there in ${locationDetails}, and it feels like ${feelslike_c} degrees out. ` +
+					` Condition: ${condition.text}.` +
+					` Cloudy: ${cloud}%`
 			);
 		})
 		.catch(function (error) {
