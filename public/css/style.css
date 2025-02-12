@@ -1,28 +1,28 @@
-/* Default Dark Mode */
+/* Default Light Mode */
 :root {
-	--bg-color: #121212;
-	--text-color: #e0e0e0;
-	--header-color: #ff6b6b;
-	--subheader-color: #ff8e72;
-	--link-color: #bbb;
-	--footer-text-color: #aaa;
-	--border-color: #444;
-	--input-border: #666;
-	--button-border: #666;
+	--bg-color: #fff;
+	--text-color: #333;
+	--header-color: crimson;
+	--subheader-color: tomato;
+	--link-color: #6e6e6e;
+	--footer-text-color: #888;
+	--border-color: #eee2e2;
+	--input-border: #ccc;
+	--button-border: #ccc;
 }
 
-/* Light Mode */
-@media (prefers-color-scheme: light) {
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
 	:root {
-		--bg-color: #fff;
-		--text-color: #333;
-		--header-color: crimson;
-		--subheader-color: tomato;
-		--link-color: #6e6e6e;
-		--footer-text-color: #888;
-		--border-color: #eee2e2;
-		--input-border: #ccc;
-		--button-border: #ccc;
+		--bg-color: #121212;
+		--text-color: #e0e0e0;
+		--header-color: #ff6b6b;
+		--subheader-color: #ff8e72;
+		--link-color: #bbb;
+		--footer-text-color: #aaa;
+		--border-color: #444;
+		--input-border: #666;
+		--button-border: #666;
 	}
 }
 
