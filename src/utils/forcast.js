@@ -33,7 +33,7 @@ const forcast = (latitute, longitute, callback) => {
 				undefined,
 				`It is currently ${temp_c} degrees out there in ${locationDetails}, and it feels like ${feelslike_c} degrees out. ` +
 					` Weather condition is ${condition.text}.` +
-					` The sky is ${cloud} cloudy.%`
+					` The sky is ${cloud}% cloudy.`
 			);
 		})
 		.catch(function (error) {
