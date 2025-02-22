@@ -59,7 +59,7 @@ app.get("/about", (req, res) => {
 	});
 });
 // app.com/about
-
+// handling a get request on /help
 app.get("/help", (req, res) => {
 	res.render("help", {
 		title: "Help!",
@@ -92,7 +92,7 @@ app.get("/help/*", (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-	res.send("Contact Page");
+	res.send("Contact Page")
 });
 
 app.get("/weather", (req, res) => {
